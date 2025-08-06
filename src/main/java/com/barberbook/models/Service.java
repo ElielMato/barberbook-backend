@@ -19,7 +19,7 @@ public class Service {
     private Long id;
 
     @Column(name = "id_company", nullable = false)
-    private Integer idCompany;
+    private Long idCompany;
 
     @Column(name = "name", nullable = false)
     private String name;
