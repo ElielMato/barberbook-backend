@@ -9,11 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-/**
- * Represents a user in the application.
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -48,31 +44,4 @@ public class User {
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
-
-    /**
-     * Compares this user to another object for equality.
-     * Equality is based on the user's ID if both IDs are not null.
-     *
-     * @param o The object to compare with.
-     * @return true if the objects are equal, false otherwise.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        if (id == null || user.id == null) return false;
-        return Objects.equals(id, user.id);
-    }
-
-    /**
-     * Generates a hash code for this user.
-     * The hash code is based on the user's ID.
-     *
-     * @return The hash code.
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

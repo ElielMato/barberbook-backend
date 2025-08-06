@@ -2,6 +2,7 @@ package com.barberbook.DTOs;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.AllArgsConstructor;
 public class UserRegistrationRequest {
 
     @NotBlank
-    @Size(min = 1, max = 50)
+    @Size(min = 3, max = 50)
     private String name;
 
     @NotBlank
@@ -29,6 +30,6 @@ public class UserRegistrationRequest {
     @Size(min = 8, max = 14)
     private String phone;
 
-    @NotBlank
+    @NotNull
     private Integer role;
 }
